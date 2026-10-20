@@ -1,0 +1,99 @@
+/* ---------- Price block ---------- */
+.price { display: flex; align-items: baseline; gap: var(--sp-2); flex-wrap: wrap; }
+.price__current { font-size: var(--fs-lg); font-weight: 700; color: var(--c-primary); }
+.price__original { font-size: var(--fs-sm); color: var(--c-muted); text-decoration: line-through; }
+.price--lg .price__current { font-size: var(--fs-2xl); }
+
+/* ---------- Quantity stepper ---------- */
+.stepper {
+  display: inline-flex; align-items: stretch;
+  border: 1px solid var(--c-line); border-radius: var(--radius-sm);
+  overflow: hidden; background: var(--c-surface);
+}
+.stepper button {
+  width: 36px; border: 0; background: var(--c-cream);
+  font-size: var(--fs-lg); color: var(--c-ink);
+  transition: background var(--t-fast) var(--ease);
+}
+.stepper button:hover:not(:disabled) { background: var(--c-primary-soft); color: var(--c-primary); }
+.stepper button:disabled { opacity: 0.4; cursor: not-allowed; }
+.stepper input {
+  width: 48px; border: 0; text-align: center;
+  font-weight: 600; -moz-appearance: textfield;
+}
+.stepper input::-webkit-outer-spin-button,
+.stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* ---------- Product card ---------- */
+.pcard {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+}
+.pcard:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+
+.pcard__media {
+  position: relative;
+  background: var(--c-cream);
+  aspect-ratio: 1 / 1;
+  display: grid; place-items: center;
+}
+.pcard__media img, .pcard__media svg {
+  width: 100%; height: 100%; object-fit: contain;
+  padding: var(--sp-4);
+  transition: transform var(--t-med) var(--ease);
+}
+.pcard:hover .pcard__media img { transform: scale(1.05); }
+
+.pcard__badges {
+  position: absolute; top: var(--sp-3); left: var(--sp-3);
+  display: flex; flex-direction: column; gap: var(--sp-1); align-items: flex-start;
+  z-index: 2;
+}
+.pcard__wish {
+  position: absolute; top: var(--sp-3); right: var(--sp-3); z-index: 2;
+  width: 38px; height: 38px; border-radius: 50%; border: 0;
+  background: #fff; color: var(--c-muted);
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+.pcard__wish:hover { transform: scale(1.1); color: var(--c-primary); }
+.pcard__wish.active { color: var(--c-primary); }
+
+.pcard__body {
+  display: flex; flex-direction: column; gap: var(--sp-2);
+  padding: var(--sp-4);
+  flex: 1;
+}
+.pcard__cat { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--c-muted); }
+.pcard__name { font-family: var(--font-body); font-size: var(--fs-base); font-weight: 600; margin: 0; }
+.pcard__name a { color: var(--c-ink); }
+.pcard__name a:hover { color: var(--c-primary); }
+.pcard__pack { font-size: var(--fs-sm); color: var(--c-muted); }
+.pcard__actions { display: flex; gap: var(--sp-2); margin-top: auto; padding-top: var(--sp-2); }
+.pcard__actions .btn { flex: 1; padding: 10px 12px; }
+
+/* ---------- Grid ---------- */
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-5);
+}
+@media (max-width: 560px) {
+  .pgrid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
+  .pcard__actions { flex-direction: column; }
+}
+
+/* ---------- Empty state (shared) ---------- */
+.empty {
+  text-align: center;
+  padding: var(--sp-8) var(--sp-5);
+  background: var(--c-cream);
+  border-radius: var(--radius-lg);
+}
+.empty svg { margin: 0 auto var(--sp-4); color: var(--c-gold); }

@@ -1,0 +1,53 @@
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; padding: 0; margin: 0 0 var(--sp-4); font-size: var(--fs-sm); color: var(--c-muted); }
+.crumbs a { color: var(--c-muted); }
+.crumbs a:hover { color: var(--c-primary); }
+.crumbs [aria-current] { color: var(--c-ink); font-weight: 600; }
+
+.listing { padding: var(--sp-6) 0 var(--sp-8); }
+.listing__banner {
+  background: linear-gradient(135deg, #6d1419, #3d0c0f);
+  color: var(--c-cream);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+.listing__banner h1 { color: #fff; margin-bottom: var(--sp-2); }
+.listing__banner p { color: #e9dccb; margin: 0; max-width: 60ch; }
+
+.listing__toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+}
+.listing__count {
+  font-size: var(--fs-sm); color: var(--c-muted);
+  background: var(--c-cream); border-radius: var(--radius-sm);
+  padding: 8px 14px;
+}
+.listing__toolbar .spacer { flex: 1; }
+.select, .listing select {
+  padding: 8px 12px;
+  border: 1px solid var(--c-line); border-radius: var(--radius-sm);
+  background: var(--c-surface); font-size: var(--fs-sm);
+}
+.check { display: inline-flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-sm); color: var(--c-ink); }
+
+.listing__layout { display: grid; grid-template-columns: 240px 1fr; gap: var(--sp-6); align-items: start; }
+.filters {
+  border: 1px solid var(--c-line); border-radius: var(--radius);
+  padding: var(--sp-5);
+  position: sticky; top: calc(var(--header-h) + var(--sp-4));
+}
+.filters h2 { font-family: var(--font-body); font-size: var(--fs-base); font-weight: 700; color: var(--c-ink); }
+.filters fieldset { border: 0; padding: 0; margin: 0 0 var(--sp-5); }
+.filters legend {
+  font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--c-muted);
+  margin-bottom: var(--sp-3);
+}
+.filters label { display: flex; align-items: center; gap: var(--sp-2); padding: 4px 0; font-size: var(--fs-sm); }
+.filters .btn { margin-top: var(--sp-2); }
+
+@media (max-width: 900px) {
+  .listing__layout { grid-template-columns: 1fr; }
+  .filters { position: static; }
+}

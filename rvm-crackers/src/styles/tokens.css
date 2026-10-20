@@ -1,0 +1,63 @@
+/* =====================================================================
+   RVM Crackers — design tokens
+   Every color, type size, space, radius, shadow and timing used by the
+   component stylesheets lives here. Rebrand by editing this file only.
+   ===================================================================== */
+:root {
+  /* ---- Color ---- */
+  --c-primary: #a3161d;        /* festive crimson — buttons, prices, links */
+  --c-primary-dark: #7e1016;   /* hover / pressed */
+  --c-primary-soft: #fbe8e6;   /* tinted hover backgrounds */
+  --c-maroon: #5a0f13;         /* announcement bar, deep panels */
+  --c-gold: #d9a441;           /* sparkle accent */
+  --c-gold-dark: #9c711f;      /* gold text on light backgrounds */
+  --c-cream: #fbf3e4;          /* warm section wash, light text on maroon */
+  --c-surface: #ffffff;
+  --c-ink: #2a1d18;
+  --c-muted: #76665c;
+  --c-line: #eadfce;
+  --c-footer: #1c1513;
+  --c-success: #2f7d43;
+  --c-error: #b42318;
+
+  /* ---- Type ---- */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-body: 'Mukta', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+  --fs-hero: clamp(2.25rem, 4.6vw + 0.5rem, 3.75rem);
+
+  /* ---- Space (4px base) ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* ---- Shape & depth ---- */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(42, 29, 24, 0.12);
+  --shadow: 0 8px 24px rgba(90, 15, 19, 0.10);
+  --shadow-lg: 0 18px 48px rgba(42, 29, 24, 0.18);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 150ms;
+  --t-med: 280ms;
+
+  /* ---- Layout ---- */
+  --container: 1240px;
+  --header-h: 76px;
+}
